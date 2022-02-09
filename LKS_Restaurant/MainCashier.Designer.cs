@@ -40,9 +40,13 @@ namespace LKS_Restaurant
             this.panel_menu = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.panel_order = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel_password.SuspendLayout();
             this.panel_menu.SuspendLayout();
+            this.panel_order.SuspendLayout();
             this.SuspendLayout();
             // 
             // labeltime
@@ -72,6 +76,7 @@ namespace LKS_Restaurant
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(140)))), ((int)(((byte)(96)))));
+            this.panel1.Controls.Add(this.panel_order);
             this.panel1.Controls.Add(this.labelname);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.panel_password);
@@ -111,7 +116,7 @@ namespace LKS_Restaurant
             this.panel_password.Controls.Add(this.label7);
             this.panel_password.Controls.Add(this.label8);
             this.panel_password.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panel_password.Location = new System.Drawing.Point(0, 141);
+            this.panel_password.Location = new System.Drawing.Point(0, 217);
             this.panel_password.Name = "panel_password";
             this.panel_password.Size = new System.Drawing.Size(253, 77);
             this.panel_password.TabIndex = 3;
@@ -176,6 +181,41 @@ namespace LKS_Restaurant
             this.label4.Text = "";
             this.label4.Click += new System.EventHandler(this.panel_menu_Click);
             // 
+            // panel_order
+            // 
+            this.panel_order.Controls.Add(this.label1);
+            this.panel_order.Controls.Add(this.label2);
+            this.panel_order.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panel_order.Location = new System.Drawing.Point(0, 141);
+            this.panel_order.Name = "panel_order";
+            this.panel_order.Size = new System.Drawing.Size(253, 77);
+            this.panel_order.TabIndex = 3;
+            this.panel_order.Click += new System.EventHandler(this.panel_order_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(79, 29);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(58, 23);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Order";
+            this.label1.Click += new System.EventHandler(this.panel_order_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe MDL2 Assets", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(15, 23);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(50, 35);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "";
+            this.label2.Click += new System.EventHandler(this.panel_order_Click);
+            // 
             // MainCashier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -195,6 +235,8 @@ namespace LKS_Restaurant
             this.panel_password.PerformLayout();
             this.panel_menu.ResumeLayout(false);
             this.panel_menu.PerformLayout();
+            this.panel_order.ResumeLayout(false);
+            this.panel_order.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -213,5 +255,8 @@ namespace LKS_Restaurant
         private System.Windows.Forms.Panel panel_menu;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Panel panel_order;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }

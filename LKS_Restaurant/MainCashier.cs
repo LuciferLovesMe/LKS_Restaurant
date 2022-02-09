@@ -50,5 +50,12 @@ namespace LKS_Restaurant
             ChangePassword change = new ChangePassword();
             change.ShowDialog();
         }
+
+        private void panel_order_Click(object sender, EventArgs e)
+        {
+            Order order = new Order();
+            this.Hide();
+            order.ShowDialog();
+        }
     }
 }

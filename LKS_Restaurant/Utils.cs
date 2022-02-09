@@ -52,7 +52,7 @@ namespace LKS_Restaurant
             SqlCommand command = new SqlCommand(com, connection);
             connection.Open();
             command.ExecuteNonQuery();
-
+            connection.Close();
         }
     }
 }

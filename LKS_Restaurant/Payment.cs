@@ -15,6 +15,53 @@ namespace LKS_Restaurant
         public Payment()
         {
             InitializeComponent();
+
+            labelname.Text = Model.name;
+            labeltime.Text = DateTime.Now.ToString("dddd, dd-MM-yyyy");
+        }
+        void loadcombo()
+        {
+            string com = "select distinct orderid from detailOrder";
+            comboBox1.ValueMember = "orderId";
+            comboBox1.DisplayMember = "Orderid";
+            comboBox1.DataSource = Command.GetData(com);
+        }
+        private void button2_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+                Application.Exit();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                MainLogin main = new MainLogin();
+                this.Hide();
+                main.ShowDialog();
+            }
+        }
+
+        private void panel_menu_Click(object sender, EventArgs e)
+        {
+            Payment view = new Payment();
+            this.Hide();
+            view.ShowDialog();
+        }
+
+        private void panel_password_Click(object sender, EventArgs e)
+        {
+            ChangePassword change = new ChangePassword();
+            change.ShowDialog();
+        }
+
+        private void panel_order_Click(object sender, EventArgs e)
+        {
+            Order order = new Order();
+            this.Hide();
+            order.ShowDialog();
         }
     }
 }
