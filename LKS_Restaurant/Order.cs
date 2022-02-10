@@ -179,6 +179,13 @@ namespace LKS_Restaurant
                 MessageBox.Show("Please select an item", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
+        private void panel_report_Click(object sender, EventArgs e)
+        {
+            Report report = new Report();
+            this.Hide();
+            report.ShowDialog();
+        }
+
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             memberid = Convert.ToInt32(comboBox1.SelectedValue);
@@ -188,7 +195,7 @@ namespace LKS_Restaurant
         {
             if(dataGridView2.RowCount > 0)
             {
-                string com = "insert into headerOrder values(" + Model.id + ", " + memberid + ", getdate(), '', '', '" + DateTime.Now.ToString("MMMM") + "')";
+                string com = "insert into headerOrder values(" + Model.id + ", " + memberid + ", getdate(), '', '', '" + DateTime.Now.ToString("MMMM") + "', '')";
                 Command.exec(com);
 
                 command = new SqlCommand("select top(1) * from headerOrder order by orderid desc", connection);
@@ -202,7 +209,7 @@ namespace LKS_Restaurant
                 {
                     for (int i = 0; i < dataGridView2.RowCount; i++)
                     {
-                        command = new SqlCommand("insert into detailOrder values(" + orderid + ", " + Convert.ToInt32(dataGridView2.Rows[i].Cells[0].Value) + ", " + Convert.ToInt32(dataGridView2.Rows[i].Cells[2].Value) + ", " + Convert.ToInt32(dataGridView2.Rows[i].Cells[4].Value) + ", 'pending')", connection);
+                        command = new SqlCommand("insert into detailOrder values(" + orderid + ", " + Convert.ToInt32(dataGridView2.Rows[i].Cells[0].Value) + ", " + Convert.ToInt32(dataGridView2.Rows[i].Cells[2].Value) + ", " + Convert.ToInt32(dataGridView2.Rows[i].Cells[4].Value) + ", 'Pending', 'Unpaid')", connection);
                         connection.Open();
                         command.ExecuteNonQuery();
                         connection.Close();

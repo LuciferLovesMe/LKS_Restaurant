@@ -57,5 +57,12 @@ namespace LKS_Restaurant
             this.Hide();
             order.ShowDialog();
         }
+
+        private void panel_report_Click(object sender, EventArgs e)
+        {
+            Report report = new Report();
+            this.Hide();
+            report.ShowDialog();
+        }
     }
 }
